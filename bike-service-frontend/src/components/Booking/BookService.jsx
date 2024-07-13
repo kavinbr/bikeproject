@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Container, Row, Col, Form, Button, Alert, Card, Modal } from 'react-bootstrap';
 import { FaClock, FaRupeeSign } from 'react-icons/fa';
-import './BookService.css'; 
+import './BookService.css';
 
 const BookService = () => {
   const navigate = useNavigate();
@@ -17,8 +17,9 @@ const BookService = () => {
   const [serviceDate, setServiceDate] = useState('');
   const [problemDetails, setProblemDetails] = useState('');
   const [error, setError] = useState('');
-  const [showModal, setShowModal] = useState(false); 
-  const baseUrl = "https://bikeproject.onrender.com"
+  const [showModal, setShowModal] = useState(false);
+  const baseUrl = "https://bikeproject.onrender.com";
+
   useEffect(() => {
     if (!service || !user) {
       navigate('/');
@@ -56,10 +57,8 @@ const BookService = () => {
   };
 
   if (!service || !user) {
-    return null; //
+    return null;
   }
-
-
 
   const currentDate = new Date().toISOString().split('T')[0];
   const handleGoBack = () => {
@@ -75,7 +74,7 @@ const BookService = () => {
               <Col md={4} className="d-flex flex-column align-items-center justify-content-center">
                 <Card.Img
                   variant="bottom"
-                 src={ service.image}
+                  src={service.image}
                   className="img-fluid rounded"
                   style={{ maxHeight: '300px', maxWidth: '1000px', objectFit: 'cover', marginLeft: '6rem' }}
                 />
@@ -190,8 +189,8 @@ const BookService = () => {
                       Book Service
                     </Button>
                     <Button variant="danger" className="mt-3 btn btn-primary backbutt" onClick={handleGoBack}>
-              Go Back
-            </Button>
+                      Go Back
+                    </Button>
                   </Form>
                 </Card.Body>
               </Col>
