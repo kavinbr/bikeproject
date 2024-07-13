@@ -60,7 +60,7 @@ const ServiceDetails = () => {
     return <div>Loading...</div>;
   }
 
-  const imageName = service.image ? service.image.split('\\').pop() : 'No Image';
+  
 
   let mainDescription = '';
   let whatIncluded = [];
@@ -95,7 +95,7 @@ const ServiceDetails = () => {
             {service.image && (
               <div>
                 <img
-                  src={`${baseUrl}/${imageName}`}
+                  src={service.image}
                   alt={service.name}
                   className="img-fluid rounded"
                   style={{ maxHeight: '300px', objectFit: 'cover' }}
