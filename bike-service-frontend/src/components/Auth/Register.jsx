@@ -10,7 +10,7 @@ const Register = forwardRef(({ show, handleClose }, ref) => {
   const [mobileNumber, setMobileNumber] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
- const baseUrl = "https://bike-mx9b.onrender.com"
+ const baseUrl = "https://bikeproject.onrender.com"
   const handleRegister = async (e) => {
     e.preventDefault();
 
