@@ -58,8 +58,8 @@ const getServiceById = async (req, res) => {
 //Add Service to Service Database
 
 const addService = async (req, res) => {
-  const { name, description, cost, duration, ownerEmail, city ,image } = req.body;
-  // If you're sending the image path in the body, use this; otherwise use req.file.path
+  const { name, description, cost, duration, ownerEmail, city } = req.body;
+  let { image } = req.body;// If you're sending the image path in the body, use this; otherwise use req.file.path
 
   console.log('Adding service:');
   console.log('Owner Email:', ownerEmail);
