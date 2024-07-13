@@ -7,7 +7,7 @@ const AuthProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isOwner, setIsOwner] = useState(false);
   const [user, setUser] = useState(null);
-  const baseUrl = "https://bike-mx9b.onrender.com"
+  const baseUrl = "https://bikeproject.onrender.com"
   useEffect(() => {
     const token = localStorage.getItem('token');
     const storedUser = localStorage.getItem('user');
