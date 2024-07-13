@@ -7,7 +7,7 @@ const OtpEntry = ({ generatedOTP, userId, onClose, onSuccess }) => {
   const [otp, setOtp] = useState(new Array(6).fill(''));
   const [error, setError] = useState('');
   const inputRefs = useRef([]);
-  const baseUrl = "https://bike-mx9b.onrender.com"
+  const baseUrl = "https://bikeproject.onrender.com"
   const handleChange = (element, index) => {
     if (isNaN(element.value)) return;
     setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
