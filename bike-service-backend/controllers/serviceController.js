@@ -94,33 +94,44 @@ const addService = async (req, res) => {
 //Update the service by owner 
 
 const updateService = async (req, res) => {
-    const { id } = req.params;
-    const { name, description, cost, duration ,ownerEmail, city} = req.body;
-    const image = req.file ? req.file.path : undefined;
-  
-    try {
-      const service = await Service.findById(id);
-      if (!service) {
-        return res.status(404).json({ message: 'Service not found' });
-      }
-  
-      service.name = name;
-      service.description = description;
-      service.cost = cost;
-      service.duration = duration;
-      service.ownerEmail =ownerEmail;
-      service.city =city;
-      if(image) {
-        service.image = image;
-      }
-  
-      const updatedService = await service.save();
-      res.json(updatedService);
-    } catch (error) {
-      console.error('Error updating service:', error);
-      res.status(500).json({ message: 'Internal Server Error' });
+  const { id } = req.params;
+  const { name, description, cost, duration, ownerEmail, city } = req.body;
+  let { image } = req.body;
+
+  try {
+    let service = await Service.findById(id);
+
+    if (!service) {
+      // If service doesn't exist, create a new service
+      service = await Service.create({ name, description, cost, duration, image, ownerEmail, city });
+      return res.status(201).json(service);
     }
-  };
+
+    // Update existing service fields
+    service.name = name;
+    service.description = description;
+    service.cost = cost;
+    service.duration = duration;
+    service.ownerEmail = ownerEmail;
+    service.city = city;
+
+    // Check if there's a new image upload
+    if (req.file) {
+      // Check image size limit
+      if (req.file.size > 5 * 1024 * 1024) {
+        return res.status(400).json({ message: 'Image size exceeds 5MB limit. Please upload a smaller image.' });
+      }
+      service.image = req.file.path;
+    }
+
+    const updatedService = await service.save();
+    res.json(updatedService);
+  } catch (error) {
+    console.error('Error updating service:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
 
 //Delete the service by id  
 
