@@ -72,8 +72,9 @@ const OwnerDashboard = () => {
   };
   const handleShowServicesModal = () => setShowServicesModal(true);
 
-  const handleImageChange = (e) => {
+ const handleImageChange = (e) => {
     const file = e.target.files[0];
+    
 
     if (file.size > 5 * 1024 * 1024) {
       setError('Image size exceeds 5MB limit. Please upload a smaller image.');
@@ -184,6 +185,7 @@ const OwnerDashboard = () => {
       handleEditModalClose(); 
     } catch (error) {
       console.error('Error updating service:', error);
+       setError(error.response);
     }
   };
 
@@ -404,6 +406,7 @@ const OwnerDashboard = () => {
           <Modal.Title>Edit Service</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleEditModalSubmit}>
             <Form.Group controlId="editServiceName">
               <Form.Label>Service Name</Form.Label>
