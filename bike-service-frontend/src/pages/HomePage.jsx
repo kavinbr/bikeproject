@@ -271,7 +271,7 @@ const HomePage = () => {
             <h3 className="mb-4 service-head">Our Services</h3>
             <Carousel>
               {services.map((service) => {
-                const imageName = service.image ? service.image.split('\\').pop() : 'No Image';
+               
 
                
                 const endIndex = service.description.indexOf('What Included');
@@ -307,7 +307,7 @@ const HomePage = () => {
 </div>
 
                         <div className="col-md-6 d-flex align-items-center justify-content-center">
-                          <Card.Img variant="top" src={`${baseUrl}/${imageName}`} className="card-img-top img-fluid" />
+                          <Card.Img variant="top" src={ service.image} className="card-img-top img-fluid" />
                         </div>
                       </div>
                     </Card>
