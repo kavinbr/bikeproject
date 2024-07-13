@@ -12,7 +12,12 @@ const storage = multer.diskStorage({
   }
 });
 
-const upload = multer({ storage });
+
+const upload = multer({ 
+  storage,
+  limits: { fileSize: 5 * 1024 * 1024 } // 5MB file size limit
+});
+
 
 //Get service for owner based on ownerEmail and city
 
@@ -96,42 +101,37 @@ const addService = async (req, res) => {
 const updateService = async (req, res) => {
   const { id } = req.params;
   const { name, description, cost, duration, ownerEmail, city } = req.body;
-  let { image } = req.body;
+  const image = req.body.image; // Assuming the image is being sent as a base64 encoded string or a URL
 
   try {
-    let service = await Service.findById(id);
-
+    const service = await Service.findById(id);
     if (!service) {
-      // If service doesn't exist, create a new service
-      service = await Service.create({ name, description, cost, duration, image, ownerEmail, city });
-      return res.status(201).json(service);
+      return res.status(404).json({ message: 'Service not found' });
     }
 
-    // Update existing service fields
-    service.name = name;
-    service.description = description;
-    service.cost = cost;
-    service.duration = duration;
-    service.ownerEmail = ownerEmail;
-    service.city = city;
+    service.name = name || service.name;
+    service.description = description || service.description;
+    service.cost = cost || service.cost;
+    service.duration = duration || service.duration;
+    service.ownerEmail = ownerEmail || service.ownerEmail;
+    service.city = city || service.city;
 
-    // Check if there's a new image upload
-    if (req.file) {
-      // Check image size limit
-      if (req.file.size > 5 * 1024 * 1024) {
+    if (image) {
+      // Assuming image is a base64 encoded string, decode it to get its size
+      const buffer = Buffer.from(image, 'base64');
+      if (buffer.length > 5 * 1024 * 1024) { 
+        console.log('size too large');
         return res.status(400).json({ message: 'Image size exceeds 5MB limit. Please upload a smaller image.' });
       }
-      service.image = req.file.path;
+      service.image = image; // Update the image
     }
 
     const updatedService = await service.save();
     res.json(updatedService);
   } catch (error) {
-    console.error('Error updating service:', error);
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
-
 
 //Delete the service by id  
 
