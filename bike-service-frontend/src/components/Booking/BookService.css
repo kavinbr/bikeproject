@@ -1,0 +1,44 @@
+.service-details {
+  background-color: #fafafa; 
+  padding: 1.5rem; 
+}
+
+.form-control {
+  border: none; 
+  border-bottom: 2px solid #ced4da; 
+  padding: 10px; 
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: none; 
+}
+
+.form-group label {
+  font-weight: bold; 
+}
+
+.booking-form {
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+button[type="submit"] {
+  background-color: #dc3545; 
+  border: none; 
+  padding: 12px; 
+  font-size: 1rem; 
+  border-radius: 10px; 
+  margin-top: 1.5rem; 
+}
+
+button[type="submit"]:hover {
+  background-color: #c82333; 
+}
+.backbutt{
+  position: relative;
+  left:-35rem ;
+  top: -40rem;
+  
+}
