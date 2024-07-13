@@ -369,7 +369,6 @@ const OwnerDashboard = () => {
              </thead>
              <tbody>
                {services.map((service) => {
-                 const imageName = service.image ? service.image.split('\\').pop() : 'No Image';
                  return (
                   <tr key={service._id}>
                     <td>{service.name}</td>
@@ -379,7 +378,7 @@ const OwnerDashboard = () => {
                     <td>
                       <img
                       
-                      src={`${baseUrl}/${imageName}`} 
+                      src={`${baseUrl}/${service.image}`} 
                         alt={service.name}
                         style={{ width: '50px', height: '50px', objectFit: 'cover' }}
                       />
