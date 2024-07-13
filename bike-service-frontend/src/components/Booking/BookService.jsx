@@ -75,7 +75,7 @@ const BookService = () => {
               <Col md={4} className="d-flex flex-column align-items-center justify-content-center">
                 <Card.Img
                   variant="bottom"
-                  src={service.image}
+                 src={ service.image}
                   className="img-fluid rounded"
                   style={{ maxHeight: '300px', maxWidth: '1000px', objectFit: 'cover', marginLeft: '6rem' }}
                 />
