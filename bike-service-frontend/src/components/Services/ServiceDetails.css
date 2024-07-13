@@ -1,0 +1,51 @@
+
+body {
+  background-image: url('../../assets/motor.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.service-details-container{
+  margin-bottom: 4rem;
+}
+  .service-details-card {
+    font-family: Arial, sans-serif;
+  }
+  
+  .service-details-title {
+    font-family: Georgia, serif;
+  }
+  
+  .service-details-description {
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+  }
+  
+  .service-details-subtitle {
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+  }
+  
+  .service-details-list {
+    font-family: Calibri, sans-serif;
+  }
+  
+  .service-details-cost {
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+  }
+  
+  .service-details-button {
+    margin-top: 20px;
+    width: 150px;
+  }
+
+  .backbutton{
+    width: 17%;
+    position: relative;
+    bottom:54px;
+    left: 12rem;
+  }
+  

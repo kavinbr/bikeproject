@@ -1,0 +1,405 @@
+
+
+.logged-in {
+  margin-top: 0;
+}
+body, .home-page {
+  overflow-x: hidden;
+}
+
+
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding-top: 50px;
+  background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.home-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/bike2.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8; 
+}
+
+
+
+.content-p {
+  width: 50rem;
+  color: rgba(255, 251, 250, 0.986);
+  font-size: x-large;
+  font-family: 'sans-serif';
+  margin-left: 1rem;
+}
+
+.content-box {
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  left: -7rem;
+  bottom: -10rem;
+  margin-bottom: 130px;
+  width: 50%;
+  align-self: flex-start;
+}
+
+.head {
+  color: rgb(193, 239, 208);
+  width: 50rem;
+  font-size: 1.7rem;
+  position: relative;
+  font-weight: bold;
+  left: -8rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.highlighted-text {
+  color: rgb(255, 15, 15); /* Set color to red */
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.login-button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.login-button {
+  margin-top: 20px;
+  background-color: #9fe5e0;
+  position: relative;
+  bottom: -12rem;
+  height: 50px;
+}
+
+.login-button:hover {
+  background-color: #edefa4;
+}
+
+.logo-img {
+  max-width: 140px;
+  height: auto;
+  position: relative;
+  top: -3rem;
+  left: -13rem;
+  z-index: 1000;
+}
+
+.profile-container {
+  position: fixed; 
+  top: 20px;
+  right: 3rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  top: 20rem;
+}
+
+.services-container {
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.services-container .card {
+  border: none; 
+  opacity: 0.7; 
+}
+
+.services-container .card:hover {
+  opacity: 1; 
+}
+
+
+.service-head{
+  color: #e1d60d;
+  position: relative;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  top: 3rem;
+  
+}
+.service-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-link:hover {
+  text-decoration: none;
+}
+.services-carousel {
+  width: 80%;
+  margin: auto;
+}
+
+.service-card {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+}
+
+.service-card .card-img-top {
+  flex: 1;
+  height: auto;
+}
+
+.service-card .card-body {
+  flex: 2;
+  padding: 1.25rem;
+}
+
+.service-card .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.service-card .card-text {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.service-card .btn-primary {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.carousel-item {
+  margin-bottom: 20px; 
+}
+
+
+
+.step-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #dceace;
+  padding: 20px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  width: 30%;
+}
+
+.step-title {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+  
+}
+
+.progress-bar-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 1rem;
+  background-color: #9b6923; 
+  position: relative;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+.htag {
+  font-size: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(228, 228, 15);
+  z-index: 1;
+  position: relative;
+  bottom: 3em;
+  left: -3rem;
+  border-bottom: 2px solid rgb(48, 189, 217); 
+}
+
+
+
+
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #03e1f1;
+}
+
+.step-number:nth-of-type(1) {
+  left: 0;
+}
+
+.step-number:nth-of-type(2) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step-number:nth-of-type(3) {
+  right: 0;
+}
+.book-easy{
+  margin-top: 15rem;
+  margin-bottom:6rem;
+  position: relative;
+  bottom: -6rem;
+  padding-bottom: 2rem;
+}
+.center-book
+{
+  margin-top: 15rem;
+  margin-bottom:6rem;
+  position: relative;
+  bottom: 12rem;
+  padding-bottom: 2rem;
+}
+.carousel-item{
+  position: relative;
+  top: 5rem;
+  margin-bottom: 10rem;
+}
+.login-text{
+  font-size: 2rem;
+  color: rgb(176, 0, 176);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  position: relative;
+  bottom: -10rem;
+  left: 4rem;
+}
+
+/* HomePage.css */
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.left-details {
+  margin-bottom: 2rem; 
+}
+
+.card-text.desc {
+         
+  text-align: left;
+  font-size: 20px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.bottom-details .btn {
+  margin-top: 10px;
+  width: 50%;
+}
+
+.service-card {
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body .card-title {
+  margin-bottom: 20px; 
+}
+
+.service-name{
+  font-family:  'Arial Narrow Bold', sans-serif;
+}
+.icon-space {
+  margin-right: 8px;
+}
+
+.center-content {
+  position: relative;
+  width: 200%;
+  left: 15rem;
+  bottom: -16rem;
+  top: 2rem;
+ 
+}
+.center-head{
+  position: relative;
+  left: 3rem;
+}
+
+.visit-services-link {
+  z-index: 1;
+  text-decoration: none;
+  color: white; 
+  position: relative;
+  left: 30rem;
+  top: -9rem;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.3rem;
+}
+
+.visit-services-link:hover {
+  text-decoration: none;
+}
+.contact-us-section{
+  position: relative;
+  top: 6rem;
+  margin-bottom: 4rem;
+}
+.contact-h{
+  color: red;
+}
+.ptag{
+  color: white;
+}
+
+.contact-icon-col {
+  position: relative;
+  left: -74rem;
+  top: -3rem;
+}
+
+.contact-icon {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #cbd655; 
+  transition: color 0.3s;
+}
+
+.contact-icon:hover {
+  color: #007bff; 
+}
