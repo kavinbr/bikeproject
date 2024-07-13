@@ -28,7 +28,7 @@ const OwnerDashboard = () => {
   const [filteredBookings, setFilteredBookings] = useState(bookings);
   const navigate = useNavigate();
 
-  const baseUrl = "https://bike-mx9b.onrender.com";
+  const baseUrl = "https://bikeproject.onrender.com";
   const ownerEmail = localStorage.getItem('ownerEmail'); 
   const city = localStorage.getItem('ownerCity');  
 
