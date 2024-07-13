@@ -378,7 +378,7 @@ const OwnerDashboard = () => {
                     <td>
                       <img
                       
-                      src={`${baseUrl}/${service.image}`} 
+                      src={service.image} 
                         alt={service.name}
                         style={{ width: '50px', height: '50px', objectFit: 'cover' }}
                       />
