@@ -25,7 +25,7 @@ const HomePage = () => {
   const [contactFormData, setContactFormData] = useState({
     message: ''
   });
-  const baseUrl = "https://bikeservice-smo9.onrender.com"
+  const baseUrl = "https://bikeproject.onrender.com"
 
   useEffect(() => {
     const token = localStorage.getItem('token');
