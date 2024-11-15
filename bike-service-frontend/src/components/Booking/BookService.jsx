@@ -18,7 +18,7 @@ const BookService = () => {
   const [problemDetails, setProblemDetails] = useState('');
   const [error, setError] = useState('');
   const [showModal, setShowModal] = useState(false);
-  const baseUrl = "https://bikeservice-smo9.onrender.com";
+  const baseUrl = "https://bikeproject.onrender.com";
 
   useEffect(() => {
     if (!service || !user) {
