@@ -15,7 +15,7 @@ const ServiceDetails = () => {
   const navigate = useNavigate();
   console.log('user_id:', id);
   console.log('user:', user);
-  const baseUrl = "https://bikeservice-smo9.onrender.com"
+  const baseUrl = "https://bikeproject.onrender.com"
   useEffect(() => {
     const fetchServiceDetails = async () => {
       try {
